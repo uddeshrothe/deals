@@ -27,7 +27,7 @@ public class CustomerController {
 		
 		Customer customer = this.customerService.getCustomer(customerId);
 		
-		List contacts = this.restTemplate.getForObject("http://localhost:9002/contacts/customer/" + customerId, List.class);
+		List contacts = this.restTemplate.getForObject("http://contact-service/contacts/customer/" + customerId, List.class);
 		
 		customer.setContacts(contacts);
 		return customer;
